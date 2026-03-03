@@ -136,9 +136,14 @@ sudo systemctl restart nginx
 ## C. Pengujian
 ##### Gunakan browser
 
-Akses IP Public Bastion Host NginX Reverse Proxy Server
+Pengujian Server Informasi Internal Flask-Python
 ````
-http://ip_public 
+http://ip_public_sever_internal:5000 
+````
+
+Pengujian Bastion Host NginX Reverse Proxy Server
+````
+http://ip_public_bastion_host 
 ````
 
 ![Hasil Pengujian](img/hasilpengujian.png)
