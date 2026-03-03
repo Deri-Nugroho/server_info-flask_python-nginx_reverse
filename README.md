@@ -16,7 +16,13 @@ Buat dulu SG yang sesuai, ijinkan inbound rule port 22, 80 (web server), dan 330
 
 AMI yang digunakan adalah Amazon Linux
 
-Masukkan ini sebagai script user data
+- AMI : Amazon Linux 2023 (kernel-6.1)
+- Instance type : t2.nano
+- key pair : vockey
+- Security Group : Allow inbound port 22 80 5000 dari 0.0.0.0/0
+
+
+Masukkan ini sebagai script user data (di menu Advanced Details)
 
 ````
 #!/bin/bash
