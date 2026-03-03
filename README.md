@@ -161,82 +161,81 @@ http://ip_public_bastion_host
 ### A.1. Buat VPC
 1. Cari menu VPC
 2. Klik tombol oranye : Create VPC
-    * VPC settings : pilih VPC only
-    * Name : kantor 
-    * IPv4 CIDR : 10.100.0.0/16
+   - VPC settings : pilih VPC only
+   - Name : kantor 
+   - IPv4 CIDR : 10.100.0.0/16
 
 3. klik tombol oranye Create VPC di bawah
-- hasil dapat dilihat di menu kiri Your VPCs
+   - hasil dapat dilihat di menu kiri Your VPCs
 
 ### A.2. Buat Subnet
 1. klik menu Subnet di sebelah kiri
 2. Klik tombol oranye : Create Subnet
-- VPC ID : pilih kantor
-- Subnet name : kantor-public
-- Availability Zone : us-east-1a
-- IPv4 subnet CIDR block : 10.100.1.0/24
+   - VPC ID : pilih kantor
+   - Subnet name : kantor-public
+   - Availability Zone : us-east-1a
+   - IPv4 subnet CIDR block : 10.100.1.0/24
 
 3. klik Add new Subnet
-
-- Subnet name : kantor-private
-- Availability Zone : us-east-1a
-- IPv4 subnet CIDR block : 10.100.2.0/24
+   - Subnet name : kantor-private
+   - Availability Zone : us-east-1a
+   - IPv4 subnet CIDR block : 10.100.2.0/24
 
 4. klik tombol oranye : Create Subnet
-- Lihat hasilnya di menu kiri Subnet
+   - Lihat hasilnya di menu kiri Subnet
 
 ### A.3. Buat Internet Gateway
 1. klik menu Internet Gateway di sebelah kiri
 2. Klik tombol oranye : Create internet gateway
-- Name : igw-kantor
+   - Name : igw-kantor
 3. Klik tombol oranye : Create internet gateway
 4. klik tombol Attach to VPC
-- Pilih VPC kantor
+   - Pilih VPC kantor
 
 ### A.4. Buat NAT Gateway
 1. klik menu NAT Gateway di sebelah kiri
 2. Klik tombol oranye : Create NAT gateway
-- Name : nat-kantor
-- Availability mode : Zonal
-- Subnet : pilih kantor-public
+   - Name : nat-kantor
+   - Availability mode : Zonal
+   - Subnet : pilih kantor-public
 
 3. klik tombol Allocate Elastic IP 
 
 4. Klik tombol oranye : Create NAT gateway
-- Lihat hasilnya di menu kiri NAT gateway
-- Lihat Elastic IPs yang dipegang di menu kiri Elastic IPs
+   - Lihat hasilnya di menu kiri NAT gateway
+   - Lihat Elastic IPs yang dipegang di menu kiri Elastic IPs
 
 ### A.5. Buat Routing Table - subnet kantor-public
 1. klik menu Route table di sebelah kiri
 2. Klik tombol oranye : Create route table
-- Name : rt-kantor-public
-- VPC : pilih kantor
+   - Name : rt-kantor-public
+   - VPC : pilih kantor
 3. Klik tombol oranye : Create route table
 4. di Tab Routes klik tombol Edit router
-- klik Add route
-- Destination : 0.0.0.0/0
-- Target : pilih Internet Gateway
-- kemudian pilih igw-kantor
+   - klik Add route
+   - Destination : 0.0.0.0/0
+   - Target : pilih Internet Gateway
+   - kemudian pilih igw-kantor
 
 5. di Tab Subnet associations klik tombol Edit subnet associations
-- centang kantor-public
+   - centang kantor-public
 
 6. klik save associations
 
 ### A.6. Buat Routing Table - subnet kantor-private
 1. klik menu Route table di sebelah kiri
 2. Klik tombol oranye : Create route table
-- Name : rt-kantor-private
-- VPC : pilih kantor
+   - Name : rt-kantor-private
+   - VPC : pilih kantor
 3. Klik tombol oranye : Create route table
 4. di Tab Routes klik tombol Edit router
-- klik Add route
-- Destination : 0.0.0.0/0
-- Target : pilih NAT Gateway
-- kemudian pilih nat-kantor
+   - klik Add route
+   - Destination : 0.0.0.0/0
+   - Target : pilih NAT Gateway
+   - kemudian pilih nat-kantor
 
 5. di Tab Subnet associations klik tombol Edit subnet associations
-- centang kantor-private
+   - centang kantor-private
 
 6. klik save associations
 
