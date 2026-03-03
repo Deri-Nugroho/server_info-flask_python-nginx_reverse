@@ -168,8 +168,15 @@ http://ip_public_bastion_host
 - hasil dapat dilihat di menu kiri Your VPCs
 
 ### A.2. Buat Subnet
-- klik menu Subnet di sebelah kiri
-- Klik tombol oranye : Create VPC
+1. klik menu Subnet di sebelah kiri
+2. Klik tombol oranye : Create Subnet
+- VPC ID : pilih kantor
+- Subnet name : kantor-public
+- Availability Zone : us-east-1a
+- IPv4 subnet CIDR block : 10.100.1.0/24
+
+
+- klik tombol oranye : Create Subnet
 
 ## B. Buat SG di VPC kantor
 
