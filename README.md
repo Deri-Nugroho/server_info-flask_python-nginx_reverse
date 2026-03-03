@@ -157,17 +157,19 @@ http://ip_public_bastion_host
 6. tempatkan EC2 internal (Flask-Python) di kantor-private
 
 ## A. Konfigurasi VPC kantor
-1. Cari menu VPC
 
-### Buat VPC
-2. Buat VPC secara manual dengan cara Klik tombol oranye : Create VPC
+### A.1. Buat VPC
+1. Cari menu VPC
+2. Klik tombol oranye : Create VPC
 - VPC settings : pilih VPC only
 - Name : kantor 
 - IPv4 CIDR : 10.100.0.0/16
 - klik tombol oranye Create VPC di bawah
 - hasil dapat dilihat di menu kiri Your VPCs
 
-### Buat Subnet
+### A.2. Buat Subnet
+- klik menu Subnet di sebelah kiri
+- Klik tombol oranye : Create VPC
 
 ## B. Buat SG di VPC kantor
 
