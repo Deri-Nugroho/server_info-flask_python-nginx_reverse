@@ -42,7 +42,40 @@ nohup python3 app.py > log_flask.txt 2>&1 &
 ````
 
 ---
+### EC2 Reverse Proxy : Subnet Public
 
+AMI : Ubuntu 24.04
+
+
+````
+sudo apt update
+sudo apt install nginx -y
+
+sudo nano /etc/nginx/sites-available/serverinfo
+
+
+
+````
+
+isi dengan
+
+````
+server {
+    listen 80;
+    server_name domain-anda.com; # Atau gunakan IP Publik Bastion
+
+    location / {
+        proxy_pass http://10.0.x.x:5000; # IP Privat Server Flask & Port Gunicorn/Flask
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+````
+
+---
 ### A. Buat RDS
 
 1. Buka Aurora and RDS
