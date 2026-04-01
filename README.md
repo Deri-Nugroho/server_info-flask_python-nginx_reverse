@@ -1,5 +1,7 @@
 # Simple Server Information - Flask+Python - NginX untuk Reverse Proxy
 
+![AWS Architecture Diagram](server_info-flask_python-nginx_reverse.drawio.png)
+
 ---
 
 # I. Pengujian pada VPC Default
